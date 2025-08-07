@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimpleHotelRoomManagement_EF_Core.Helper
 {
-    class Validation
+    public static class Validation
     {
     }
 }
