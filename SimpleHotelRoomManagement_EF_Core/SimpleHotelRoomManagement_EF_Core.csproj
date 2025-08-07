@@ -18,8 +18,7 @@
 
   <ItemGroup>
     <Folder Include="Models\" />
-    <Folder Include="Additional\" />
-    <Folder Include="Validation\" />
+    <Folder Include="Helper\" />
     <Folder Include="Repositries\" />
     <Folder Include="Services\" />
   </ItemGroup>
