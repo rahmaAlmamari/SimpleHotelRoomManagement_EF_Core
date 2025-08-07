@@ -288,5 +288,25 @@ namespace SimpleHotelRoomManagement_EF_Core.Helper
         // 1. Extracting the original salt from the stored hash
         // 2. Re-hashing the input password using the same salt
         // 3. Comparing both hashes
+
+        //11. Check if the Password unique or not ...
+        public static bool PasswordIsUnique(string password, List<string> list)
+        {
+            bool IsUnique = true;//it is unique (not exsit in the system) ...
+            //to check if password is exist or not (password should be unique) ...
+            foreach (var storedHashpassword in list)
+            {
+                //to call VerifyPasswordPBKDF2 which will hash the password and
+                //compare it with the stored hash password ...
+                if (VerifyPasswordPBKDF2(password, storedHashpassword))
+                {
+                    Console.WriteLine("Password is exist in the system.");
+                    Additional.HoldScreen();//just to hoad second ...
+                    IsUnique = false;
+                    return false; // Match found
+                }
+            }
+            return IsUnique; // No match
+        }
     }
 }
