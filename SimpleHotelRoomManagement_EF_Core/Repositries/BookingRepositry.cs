@@ -21,5 +21,11 @@ namespace SimpleHotelRoomManagement_EF_Core.Repositries
         {
             return _context.Bookings.ToList();
         }
+        //to AddBooking method to add a new booking to the database ...
+        public void AddBooking(Booking booking)
+        {
+            _context.Bookings.Add(booking);
+            _context.SaveChanges();
+        }
     }
 }
