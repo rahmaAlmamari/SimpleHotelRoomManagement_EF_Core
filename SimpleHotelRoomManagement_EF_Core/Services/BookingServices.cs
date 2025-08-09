@@ -37,5 +37,10 @@ namespace SimpleHotelRoomManagement_EF_Core.Services
         {
             return _BookingRepositry.GetBookingsByGuestId(guestId);
         }
+        //to GetBookingsByRoomNumber method to retrieve bookings by room number ...
+        public List<Booking> GetBookingsByRoomNumber(int roomNumber)
+        {
+            return _BookingRepositry.GetBookingsByRoomNumber(roomNumber);
+        }
     }
 }
