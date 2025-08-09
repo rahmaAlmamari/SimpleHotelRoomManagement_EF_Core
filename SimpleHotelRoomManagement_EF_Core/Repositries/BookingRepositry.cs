@@ -42,6 +42,16 @@ namespace SimpleHotelRoomManagement_EF_Core.Repositries
         {
             return _context.Bookings.Where(b => b.RoomNumber == roomNumber).ToList();
         }
+        //to UpdateBookingCheckInDate method to update a booking's check-in date ...
+        public void UpdateBookingCheckInDate(int bookingId, DateTime newCheckInDate)
+        {
+            var booking = GetBookingById(bookingId);
+            if (booking != null)
+            {
+                booking.CheckInDate = newCheckInDate;
+                _context.SaveChanges();
+            }
+        }
 
     }
 }
