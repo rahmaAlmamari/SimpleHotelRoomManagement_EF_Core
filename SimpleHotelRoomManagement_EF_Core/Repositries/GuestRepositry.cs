@@ -27,5 +27,10 @@ namespace SimpleHotelRoomManagement_EF_Core.Repositries
             _context.Guests.Add(guest);
             _context.SaveChanges();
         }
+        //to GetGuestById method to retrieve a guest by their ID ...
+        public Guest GetGuestById(int id)
+        {
+            return _context.Guests.FirstOrDefault(g => g.GuestId == id);
+        }
     }
 }
