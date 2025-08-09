@@ -17,5 +17,10 @@ namespace SimpleHotelRoomManagement_EF_Core.Services
         {
             _BookingRepositry = bookingRepositry;
         }
+        //to GetAllBookings method to retrieve all bookings from the database ...
+        public List<Booking> GetAllBookings()
+        {
+            return _BookingRepositry.GetAllBookings();
+        }
     }
 }
