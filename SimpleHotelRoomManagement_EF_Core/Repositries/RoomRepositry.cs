@@ -7,7 +7,7 @@ using SimpleHotelRoomManagement_EF_Core.Models;
 
 namespace SimpleHotelRoomManagement_EF_Core.Repositries
 {
-    public class RoomRepositry
+    public class RoomRepositry : IRoomRepositry
     {
         //to create private field for the DbContext ...
         private readonly HotelDbContext _context;
