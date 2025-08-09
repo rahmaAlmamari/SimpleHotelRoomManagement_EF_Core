@@ -16,7 +16,9 @@ namespace SimpleHotelRoomManagement_EF_Core.Models
 
 
         //----------------------------------------------------
-        public int GuestId { get; set; }
+        [ForeignKey("guest")]
+        public int GuestId { get; set; } // Foreign key property for guest class
+        public Guest guest { get; set; } // Navigation property
 
         //----------------------------------------------------
         [ForeignKey("room")]
