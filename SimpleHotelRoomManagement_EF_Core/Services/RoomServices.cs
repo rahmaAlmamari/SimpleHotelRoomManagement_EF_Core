@@ -37,5 +37,11 @@ namespace SimpleHotelRoomManagement_EF_Core.Services
         {
             _RoomRepositry.UpdateRoomDailyPrice(roomNumber, newDailyPrice);
         }
+        //to UpdateRoomAvailability method to update an existing room's availability status ...
+        public void UpdateRoomAvailability(int roomNumber, bool isAvailable)
+        {
+            _RoomRepositry.UpdateRoomAvailability(roomNumber, isAvailable);
+        }
+
     }
 }
