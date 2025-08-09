@@ -12,5 +12,10 @@ namespace SimpleHotelRoomManagement_EF_Core.Services
     {
         //to create private field for the BookingRepositry ...
         private readonly IBookingRepositry _BookingRepositry;
+        //to create constructor to initialize the BookingRepositry ...
+        public BookingServices(IBookingRepositry bookingRepositry)
+        {
+            _BookingRepositry = bookingRepositry;
+        }
     }
 }
