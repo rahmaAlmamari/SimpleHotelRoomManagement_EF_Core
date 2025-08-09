@@ -16,5 +16,11 @@ namespace SimpleHotelRoomManagement_EF_Core.Repositries
         {
             _context = context;
         }
+        //to GetAllRatings method to retrieve all ratings from the database ...
+        public List<Rating> GetAllRatings()
+        {
+            return _context.Ratings.ToList();
+        }
+
     }
 }
