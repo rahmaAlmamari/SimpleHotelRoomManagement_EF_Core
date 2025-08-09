@@ -27,6 +27,11 @@ namespace SimpleHotelRoomManagement_EF_Core.Repositries
             _context.Ratings.Add(rating);
             _context.SaveChanges();
         }
+        //to GetRatingById method to retrieve a rating by its ID ...
+        public Rating GetRatingById(int id)
+        {
+            return _context.Ratings.FirstOrDefault(r => r.RatingId == id);
+        }
 
     }
 }
