@@ -8,7 +8,7 @@ using SimpleHotelRoomManagement_EF_Core.Repositries;
 
 namespace SimpleHotelRoomManagement_EF_Core.Services
 {
-    public class GestServices
+    public class GestServices : IGestServices
     {
         //to create private field for the GuestRepositry ...
         private readonly IGuestRepositry _GuestRepositry;
@@ -53,4 +53,5 @@ namespace SimpleHotelRoomManagement_EF_Core.Services
             _GuestRepositry.DeleteGuest(id);
 
         }
+    }
 }
