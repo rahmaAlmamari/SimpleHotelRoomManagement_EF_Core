@@ -8,7 +8,7 @@ using SimpleHotelRoomManagement_EF_Core.Repositries;
 
 namespace SimpleHotelRoomManagement_EF_Core.Services
 {
-    public class BookingServices
+    public class BookingServices : IBookingServices
     {
         //to create private field for the BookingRepositry ...
         private readonly IBookingRepositry _BookingRepositry;
@@ -62,4 +62,5 @@ namespace SimpleHotelRoomManagement_EF_Core.Services
         {
             _BookingRepositry.DeleteBooking(bookingId);
         }
+    }
 }
