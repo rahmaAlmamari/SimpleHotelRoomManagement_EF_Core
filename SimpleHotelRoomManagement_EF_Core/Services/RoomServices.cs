@@ -42,6 +42,10 @@ namespace SimpleHotelRoomManagement_EF_Core.Services
         {
             _RoomRepositry.UpdateRoomAvailability(roomNumber, isAvailable);
         }
+        //to DeleteRoom method to delete a room from the database ...
+        public void DeleteRoom(int roomNumber)
+        {
+            _RoomRepositry.DeleteRoom(roomNumber);
 
-    }
+        }
 }
