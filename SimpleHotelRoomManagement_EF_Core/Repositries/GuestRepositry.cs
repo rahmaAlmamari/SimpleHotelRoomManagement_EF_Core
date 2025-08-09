@@ -42,5 +42,15 @@ namespace SimpleHotelRoomManagement_EF_Core.Repositries
                 _context.SaveChanges();
             }
         }
+        //to UpdateGuestEmail method to update an existing guest's email ...
+        public void UpdateGuestEmail(int id, string newEmail)
+        {
+            var guest = GetGuestById(id);
+            if (guest != null)
+            {
+                guest.GuestEmail = newEmail;
+                _context.SaveChanges();
+            }
+        }
     }
 }
