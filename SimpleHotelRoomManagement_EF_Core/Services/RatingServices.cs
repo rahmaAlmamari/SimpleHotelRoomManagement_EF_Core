@@ -17,5 +17,10 @@ namespace SimpleHotelRoomManagement_EF_Core.Services
         {
             _RatingRepositry = ratingRepositry;
         }
+        //to GetAllRatings method to retrieve all ratings from the database ...
+        public List<Rating> GetAllRatings()
+        {
+            return _RatingRepositry.GetAllRatings();
+        }
     }
 }
