@@ -12,5 +12,10 @@ namespace SimpleHotelRoomManagement_EF_Core.Services
     {
         //to create private field for the RatingRepositry ...
         private readonly IRatingRepositry _RatingRepositry;
+        //to create constructor to initialize the RatingRepositry ...
+        public RatingServices(IRatingRepositry ratingRepositry)
+        {
+            _RatingRepositry = ratingRepositry;
+        }
     }
 }
