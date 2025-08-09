@@ -8,7 +8,7 @@ namespace SimpleHotelRoomManagement_EF_Core.Models
 {
     public class Rating
     {
-        public int ReatingId { get; set; }
+        public int RatingId { get; set; }
 
         public int GuestId { get; set; }
         public int RoomNumber { get; set; }
