@@ -62,6 +62,16 @@ namespace SimpleHotelRoomManagement_EF_Core.Repositries
                 _context.SaveChanges();
             }
         }
+        //to UpdateRatingDate method to update an existing rating's date ...
+        public void UpdateRatingDate(int id, DateTime newDate)
+        {
+            var rating = GetRatingById(id);
+            if (rating != null)
+            {
+                rating.RatingDate = newDate;
+                _context.SaveChanges();
+            }
+        }
 
     }
 }
