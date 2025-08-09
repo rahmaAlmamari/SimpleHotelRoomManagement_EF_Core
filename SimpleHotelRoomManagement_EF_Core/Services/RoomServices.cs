@@ -22,5 +22,10 @@ namespace SimpleHotelRoomManagement_EF_Core.Services
         {
             return _RoomRepositry.GetAllRooms();
         }
+        //to AddRoom method to add a new room to the database ...
+        public void AddRoom(Room room)
+        {
+            _RoomRepositry.AddRoom(room);
+        }
     }
 }
