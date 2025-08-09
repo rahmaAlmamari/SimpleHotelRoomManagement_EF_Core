@@ -72,6 +72,16 @@ namespace SimpleHotelRoomManagement_EF_Core.Repositries
                 _context.SaveChanges();
             }
         }
+        //to DeleteBooking method to delete a booking from the database ...
+        public void DeleteBooking(int bookingId)
+        {
+            var booking = GetBookingById(bookingId);
+            if (booking != null)
+            {
+                _context.Bookings.Remove(booking);
+                _context.SaveChanges();
+            }
+        }
 
     }
 }
