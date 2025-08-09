@@ -42,5 +42,15 @@ namespace SimpleHotelRoomManagement_EF_Core.Repositries
                 _context.SaveChanges();
             }
         }
+        //to UpdateRoomAvailability method to update an existing room's availability status ...
+        public void UpdateRoomAvailability(int roomNumber, bool isAvailable)
+        {
+            var room = GetRoomByNumber(roomNumber);
+            if (room != null)
+            {
+                room.IsAvailable = isAvailable;
+                _context.SaveChanges();
+            }
+        }
     }
 }
