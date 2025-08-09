@@ -47,6 +47,10 @@ namespace SimpleHotelRoomManagement_EF_Core.Services
         {
             _GuestRepositry.UpdateGuestPhoneNumber(id, newPhoneNumber);
         }
+        //to DeleteGuest method to delete a guest by their ID ...
+        public void DeleteGuest(int id)
+        {
+            _GuestRepositry.DeleteGuest(id);
 
-    }
+        }
 }
