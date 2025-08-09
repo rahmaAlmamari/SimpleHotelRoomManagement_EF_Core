@@ -57,5 +57,9 @@ namespace SimpleHotelRoomManagement_EF_Core.Services
         {
             _BookingRepositry.UpdateBookingTotalPrice(bookingId, newTotalPrice);
         }
-    }
+        //to DeleteBooking method to delete a booking by its ID ...
+        public void DeleteBooking(int bookingId)
+        {
+            _BookingRepositry.DeleteBooking(bookingId);
+        }
 }
