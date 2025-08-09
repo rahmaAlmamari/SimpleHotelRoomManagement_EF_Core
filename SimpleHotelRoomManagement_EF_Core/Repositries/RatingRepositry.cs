@@ -72,6 +72,16 @@ namespace SimpleHotelRoomManagement_EF_Core.Repositries
                 _context.SaveChanges();
             }
         }
+        //to DeleteRating method to delete a rating by its ID ...
+        public void DeleteRating(int id)
+        {
+            var rating = GetRatingById(id);
+            if (rating != null)
+            {
+                _context.Ratings.Remove(rating);
+                _context.SaveChanges();
+            }
+        }
 
     }
 }
