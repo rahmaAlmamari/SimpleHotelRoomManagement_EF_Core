@@ -22,5 +22,7 @@ namespace SimpleHotelRoomManagement_EF_Core.Models
         [Required]
         [RegularExpression(@"^\d{8}$")]
         public string GuestPhoneNumber { get; set; }
+
+        public ICollection<Booking> GuestBooking { get; set; } // Navigation property 
     }
 }
