@@ -32,5 +32,15 @@ namespace SimpleHotelRoomManagement_EF_Core.Repositries
         {
             return _context.Rooms.FirstOrDefault(r => r.RoomNumber == roomNumber);
         }
+        //to UpdateRoomDailyPrice method to update an existing room's DailyPrice ...
+        public void UpdateRoomDailyPrice(int roomNumber, double newDailyPrice)
+        {
+            var room = GetRoomByNumber(roomNumber);
+            if (room != null)
+            {
+                room.RoomDailyPrice = newDailyPrice;
+                _context.SaveChanges();
+            }
+        }
     }
 }
