@@ -8,7 +8,7 @@ using SimpleHotelRoomManagement_EF_Core.Repositries;
 
 namespace SimpleHotelRoomManagement_EF_Core.Services
 {
-    public class RatingServices
+    public class RatingServices : IRatingServices
     {
         //to create private field for the RatingRepositry ...
         private readonly IRatingRepositry _RatingRepositry;
