@@ -42,5 +42,10 @@ namespace SimpleHotelRoomManagement_EF_Core.Services
         {
             return _RatingRepositry.GetRatingsByRoomNumber(roomNumber);
         }
+        //to UpdateRatingScore method to update an existing rating's score ...
+        public void UpdateRatingScore(int id, int newScore)
+        {
+            _RatingRepositry.UpdateRatingScore(id, newScore);
+        }
     }
 }
