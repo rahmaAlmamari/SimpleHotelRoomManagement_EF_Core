@@ -9,5 +9,7 @@ namespace SimpleHotelRoomManagement_EF_Core.Repositries
 {
     public class RoomRepositry
     {
+        //to create private field for the DbContext ...
+        private readonly HotelDbContext _context;
     }
 }
