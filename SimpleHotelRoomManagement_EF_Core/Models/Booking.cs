@@ -15,11 +15,13 @@ namespace SimpleHotelRoomManagement_EF_Core.Models
         public int BookingId { get; set; }
 
         //----------------------------------------------------
-        public int RoomNumber { get; set; }
+        [ForeignKey("room")]
+        public int RoomNumber { get; set; } // Foreign key property for room class
+        public Room room { get; set; } // Navigation property
 
         //----------------------------------------------------
         [ForeignKey("guest")]
-        public int GuestId { get; set; } // Foreign key property 
+        public int GuestId { get; set; } // Foreign key property for guest class
         public Guest guest { get; set; } // Navigation property
 
         //-------------------------------------------------------
