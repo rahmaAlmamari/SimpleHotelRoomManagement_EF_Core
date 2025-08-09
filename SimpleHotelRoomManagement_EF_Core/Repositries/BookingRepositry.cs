@@ -32,6 +32,11 @@ namespace SimpleHotelRoomManagement_EF_Core.Repositries
         {
             return _context.Bookings.FirstOrDefault(b => b.BookingId == id);
         }
+        //to GetBookingsByGuestId method to retrieve bookings by guest ID ...
+        public List<Booking> GetBookingsByGuestId(int guestId)
+        {
+            return _context.Bookings.Where(b => b.GuestId == guestId).ToList();
+        }
 
     }
 }
