@@ -13,9 +13,16 @@ namespace SimpleHotelRoomManagement_EF_Core.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int RoomNumber { get; set; }
+
+        //----------------------------------------------------
         [Required]
         public double RoomDailyPrice { get; set; }
+
+        //----------------------------------------------------
         [Required]
         public bool IsAvailable = true;
+
+        //----------------------------------------------------
+        public ICollection<Booking> RoomBooking { get; set; } // Navigation property 
     }
 }
