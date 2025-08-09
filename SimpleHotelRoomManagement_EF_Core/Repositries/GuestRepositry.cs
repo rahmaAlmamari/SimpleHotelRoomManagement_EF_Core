@@ -32,5 +32,15 @@ namespace SimpleHotelRoomManagement_EF_Core.Repositries
         {
             return _context.Guests.FirstOrDefault(g => g.GuestId == id);
         }
+        //to UpdateGuestName method to update an existing guest's name ...
+        public void UpdateGuestName(int id, string newName)
+        {
+            var guest = GetGuestById(id);
+            if (guest != null)
+            {
+                guest.GuestName = newName;
+                _context.SaveChanges();
+            }
+        }
     }
 }
