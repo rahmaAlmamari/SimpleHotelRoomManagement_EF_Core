@@ -21,6 +21,12 @@ namespace SimpleHotelRoomManagement_EF_Core.Repositries
         {
             return _context.Ratings.ToList();
         }
+        //to AddRating method to add a new rating to the database ...
+        public void AddRating(Rating rating)
+        {
+            _context.Ratings.Add(rating);
+            _context.SaveChanges();
+        }
 
     }
 }
