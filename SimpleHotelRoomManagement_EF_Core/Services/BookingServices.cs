@@ -52,5 +52,10 @@ namespace SimpleHotelRoomManagement_EF_Core.Services
         {
             _BookingRepositry.UpdateBookingCheckOutDate(bookingId, newCheckOutDate);
         }
+        //to UpdateBookingTotalPrice method to update a booking's total price ...
+        public void UpdateBookingTotalPrice(int bookingId, double newTotalPrice)
+        {
+            _BookingRepositry.UpdateBookingTotalPrice(bookingId, newTotalPrice);
+        }
     }
 }
