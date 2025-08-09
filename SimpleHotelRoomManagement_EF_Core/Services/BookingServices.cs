@@ -42,5 +42,10 @@ namespace SimpleHotelRoomManagement_EF_Core.Services
         {
             return _BookingRepositry.GetBookingsByRoomNumber(roomNumber);
         }
+        //to UpdateBookingCheckInDate method to update a booking's check-in date ...
+        public void UpdateBookingCheckInDate(int bookingId, DateTime newCheckInDate)
+        {
+            _BookingRepositry.UpdateBookingCheckInDate(bookingId, newCheckInDate);
+        }
     }
 }
