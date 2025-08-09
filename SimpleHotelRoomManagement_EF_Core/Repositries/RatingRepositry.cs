@@ -42,6 +42,16 @@ namespace SimpleHotelRoomManagement_EF_Core.Repositries
         {
             return _context.Ratings.Where(r => r.RoomNumber == roomNumber).ToList();
         }
+        //to UpdateRatingScore method to update an existing rating's score ...
+        public void UpdateRatingScore(int id, int newScore)
+        {
+            var rating = GetRatingById(id);
+            if (rating != null)
+            {
+                rating.Score = newScore;
+                _context.SaveChanges();
+            }
+        }
 
     }
 }
