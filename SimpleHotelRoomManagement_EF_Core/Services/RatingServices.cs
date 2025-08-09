@@ -52,5 +52,10 @@ namespace SimpleHotelRoomManagement_EF_Core.Services
         {
             _RatingRepositry.UpdateRatingComment(id, newComment);
         }
+        //to UpdateRatingDate method to update an existing rating's date ...
+        public void UpdateRatingDate(int id, DateTime newDate)
+        {
+            _RatingRepositry.UpdateRatingDate(id, newDate);
+        }
     }
 }
