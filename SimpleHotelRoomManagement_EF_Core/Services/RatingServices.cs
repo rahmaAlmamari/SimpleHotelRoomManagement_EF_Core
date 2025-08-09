@@ -57,5 +57,10 @@ namespace SimpleHotelRoomManagement_EF_Core.Services
         {
             _RatingRepositry.UpdateRatingDate(id, newDate);
         }
+        //to DeleteRating method to delete a rating by its ID ...
+        public void DeleteRating(int id)
+        {
+            _RatingRepositry.DeleteRating(id);
+        }
     }
 }
