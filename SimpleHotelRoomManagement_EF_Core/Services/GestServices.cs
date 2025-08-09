@@ -37,6 +37,11 @@ namespace SimpleHotelRoomManagement_EF_Core.Services
         {
             _GuestRepositry.UpdateGuestName(id, newName);
         }
+        //to UpdateGuestEmail method to update an existing guest's email ...
+        public void UpdateGuestEmail(int id, string newEmail)
+        {
+            _GuestRepositry.UpdateGuestEmail(id, newEmail);
+        }
 
     }
 }
