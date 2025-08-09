@@ -17,7 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Repositries\" />
     <Folder Include="Services\" />
   </ItemGroup>
 
