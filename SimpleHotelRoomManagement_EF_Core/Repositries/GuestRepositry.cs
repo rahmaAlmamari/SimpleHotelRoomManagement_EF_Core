@@ -10,5 +10,10 @@ namespace SimpleHotelRoomManagement_EF_Core.Repositries
     {
         //to create private field for the DbContext ...
         private readonly HotelDbContext _context;
+        //to create constructor to initialize the DbContext ...
+        public GuestRepositry(HotelDbContext context)
+        {
+            _context = context;
+        }
     }
 }
