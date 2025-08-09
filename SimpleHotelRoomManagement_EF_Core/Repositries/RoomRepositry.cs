@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimpleHotelRoomManagement_EF_Core.Repositries
 {
-    class RoomRepositry
+    public class RoomRepositry
     {
     }
 }
