@@ -52,5 +52,15 @@ namespace SimpleHotelRoomManagement_EF_Core.Repositries
                 _context.SaveChanges();
             }
         }
+        //to DeleteRoom method to delete a room from the database ...
+        public void DeleteRoom(int roomNumber)
+        {
+            var room = GetRoomByNumber(roomNumber);
+            if (room != null)
+            {
+                _context.Rooms.Remove(room);
+                _context.SaveChanges();
+            }
+        }
     }
 }
