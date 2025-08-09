@@ -27,6 +27,11 @@ namespace SimpleHotelRoomManagement_EF_Core.Services
         {
             _GuestRepositry.AddGuest(guest);
         }
+        //to GetGuestById method to retrieve a guest by their ID ...
+        public Guest GetGuestById(int id)
+        {
+            return _GuestRepositry.GetGuestById(id);
+        }
 
     }
 }
