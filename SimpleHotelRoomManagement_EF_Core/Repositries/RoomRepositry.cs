@@ -16,5 +16,10 @@ namespace SimpleHotelRoomManagement_EF_Core.Repositries
         {
             _context = context;
         }
+        //to GetAllRooms method to retrieve all rooms from the database ...
+        public List<Room> GetAllRooms()
+        {
+            return _context.Rooms.ToList();
+        }
     }
 }
