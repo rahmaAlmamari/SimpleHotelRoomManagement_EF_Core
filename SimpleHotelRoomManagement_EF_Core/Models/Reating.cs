@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimpleHotelRoomManagement_EF_Core.Models
 {
-    public class Reating
+    public class Rating
     {
         public int ReatingId { get; set; }
 
