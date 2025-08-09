@@ -52,6 +52,16 @@ namespace SimpleHotelRoomManagement_EF_Core.Repositries
                 _context.SaveChanges();
             }
         }
+        //to UpdateRatingComment method to update an existing rating's comment ...
+        public void UpdateRatingComment(int id, string newComment)
+        {
+            var rating = GetRatingById(id);
+            if (rating != null)
+            {
+                rating.Comment = newComment;
+                _context.SaveChanges();
+            }
+        }
 
     }
 }
