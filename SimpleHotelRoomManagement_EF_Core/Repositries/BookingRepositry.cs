@@ -62,6 +62,16 @@ namespace SimpleHotelRoomManagement_EF_Core.Repositries
                 _context.SaveChanges();
             }
         }
+        //to UpdateBookingTotalPrice method to update a booking's total price ...
+        public void UpdateBookingTotalPrice(int bookingId, double newTotalPrice)
+        {
+            var booking = GetBookingById(bookingId);
+            if (booking != null)
+            {
+                booking.TotalPrice = newTotalPrice;
+                _context.SaveChanges();
+            }
+        }
 
     }
 }
