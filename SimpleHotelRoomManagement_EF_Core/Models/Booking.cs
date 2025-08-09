@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimpleHotelRoomManagement_EF_Core.Models
 {
-    class Booking
+    public class Booking
     {
     }
 }
