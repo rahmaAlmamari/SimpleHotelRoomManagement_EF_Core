@@ -8,7 +8,7 @@ using SimpleHotelRoomManagement_EF_Core.Repositries;
 
 namespace SimpleHotelRoomManagement_EF_Core.Services
 {
-    public class RoomServices
+    public class RoomServices : IRoomServices
     {
         //to create private field for the RoomRepositry ...
         private readonly IRoomRepositry _RoomRepositry;
@@ -48,4 +48,5 @@ namespace SimpleHotelRoomManagement_EF_Core.Services
             _RoomRepositry.DeleteRoom(roomNumber);
 
         }
+    }
 }
