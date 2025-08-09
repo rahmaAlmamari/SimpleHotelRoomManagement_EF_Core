@@ -12,7 +12,11 @@ namespace SimpleHotelRoomManagement_EF_Core.Services
     {
         //to create private field for the GuestRepositry ...
         private readonly IGuestRepositry _GuestRepositry;
-
+        //to create constructor to initialize the GuestRepositry ...
+        public GestServices(IGuestRepositry guestRepositry)
+        {
+            _GuestRepositry = guestRepositry;
+        }
 
     }
 }
