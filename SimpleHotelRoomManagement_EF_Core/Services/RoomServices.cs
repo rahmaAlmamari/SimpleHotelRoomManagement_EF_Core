@@ -32,5 +32,10 @@ namespace SimpleHotelRoomManagement_EF_Core.Services
         {
             return _RoomRepositry.GetRoomByNumber(roomNumber);
         }
+        //to UpdateRoomDailyPrice method to update an existing room's DailyPrice ...
+        public void UpdateRoomDailyPrice(int roomNumber, double newDailyPrice)
+        {
+            _RoomRepositry.UpdateRoomDailyPrice(roomNumber, newDailyPrice);
+        }
     }
 }
