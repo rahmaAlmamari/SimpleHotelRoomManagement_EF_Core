@@ -27,5 +27,10 @@ namespace SimpleHotelRoomManagement_EF_Core.Services
         {
             _RoomRepositry.AddRoom(room);
         }
+        //to GetRoomByNumber method to retrieve a room by its number ...
+        public Room GetRoomByNumber(int roomNumber)
+        {
+            return _RoomRepositry.GetRoomByNumber(roomNumber);
+        }
     }
 }
