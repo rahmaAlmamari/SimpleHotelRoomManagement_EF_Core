@@ -52,6 +52,16 @@ namespace SimpleHotelRoomManagement_EF_Core.Repositries
                 _context.SaveChanges();
             }
         }
+        //to UpdateBookingCheckOutDate method to update a booking's check-out date ...
+        public void UpdateBookingCheckOutDate(int bookingId, DateTime newCheckOutDate)
+        {
+            var booking = GetBookingById(bookingId);
+            if (booking != null)
+            {
+                booking.CheckOutDate = newCheckOutDate;
+                _context.SaveChanges();
+            }
+        }
 
     }
 }
