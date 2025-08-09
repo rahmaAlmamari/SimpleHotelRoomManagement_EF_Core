@@ -23,6 +23,7 @@ namespace SimpleHotelRoomManagement_EF_Core.Models
         [RegularExpression(@"^\d{8}$")]
         public string GuestPhoneNumber { get; set; }
 
-        public ICollection<Booking> GuestBooking { get; set; } // Navigation property 
+        public ICollection<Booking> GuestBooking { get; set; } // Navigation property for booking class
+        public ICollection<Rating> GuestRating { get; set; } // Navigation property for rating class
     }
 }
