@@ -23,6 +23,7 @@ namespace SimpleHotelRoomManagement_EF_Core.Models
         public bool IsAvailable = true;
 
         //----------------------------------------------------
-        public ICollection<Booking> RoomBooking { get; set; } // Navigation property 
+        public ICollection<Booking> RoomBooking { get; set; } // Navigation property for booking class
+        public ICollection<Rating> RoomRating { get; set; } // Navigation property for rating class
     }
 }
