@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SimpleHotelRoomManagement_EF_Core.Models;
 
 namespace SimpleHotelRoomManagement_EF_Core.Repositries
 {
@@ -16,9 +17,15 @@ namespace SimpleHotelRoomManagement_EF_Core.Repositries
             _context = context;
         }
         //to GetAllGuests method to retrieve all guests from the database ...
-        public List<Models.Guest> GetAllGuests()
+        public List<Guest> GetAllGuests()
         {
             return _context.Guests.ToList();
+        }
+        //to AddGuest method to add a new guest to the database ...
+        public void AddGuest(Guest guest)
+        {
+            _context.Guests.Add(guest);
+            _context.SaveChanges();
         }
     }
 }
