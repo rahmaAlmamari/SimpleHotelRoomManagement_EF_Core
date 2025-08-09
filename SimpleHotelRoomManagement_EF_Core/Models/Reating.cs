@@ -14,17 +14,27 @@ namespace SimpleHotelRoomManagement_EF_Core.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int RatingId { get; set; }
 
-        public int GuestId { get; set; }
-        public int RoomNumber { get; set; }
 
+        //----------------------------------------------------
+        public int GuestId { get; set; }
+
+        //----------------------------------------------------
+        [ForeignKey("room")]
+        public int RoomNumber { get; set; }// Foreign key property for room class
+        public Room room { get; set; } // Navigation property
+
+
+        //----------------------------------------------------
         [Required]
         [Range(1, 5)] // Assuming a rating scale from 1 to 5
         public int Score { get; set; } // Assuming rating is an integer value (e.g., 1 to 5)
 
+        //----------------------------------------------------
         [Required]
         [MaxLength(500)] // Optional comment, can be up to 500 characters
         public string Comment { get; set; } // Optional comment about the rating
 
+        //----------------------------------------------------
         [Required]
         public DateTime RatingDate { get; set; } // Date when the rating was given
     }
