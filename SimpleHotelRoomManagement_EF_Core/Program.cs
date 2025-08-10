@@ -158,7 +158,11 @@ namespace SimpleHotelRoomManagement_EF_Core
                         });
                         break;
                     case '6':
-                        
+                        //to show all guests ...
+                        GuestService.GetAllGuests().ForEach(g =>
+                        {
+                            Console.WriteLine($"Guest ID: {g.GuestId}, Name: {g.GuestName}, Email: {g.GuestEmail}, Phone: {g.GuestPhoneNumber}");
+                        });
                         break;
                     case '7':
                         
