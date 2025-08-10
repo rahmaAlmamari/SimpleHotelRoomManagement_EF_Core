@@ -1,4 +1,7 @@
-﻿namespace SimpleHotelRoomManagement_EF_Core
+﻿using SimpleHotelRoomManagement_EF_Core.Repositries;
+using SimpleHotelRoomManagement_EF_Core.Services;
+
+namespace SimpleHotelRoomManagement_EF_Core
 {
     internal class Program
     {
@@ -8,6 +11,11 @@
             using HotelDbContext context = new HotelDbContext();
             //to make sure that DB created ...
             context.Database.EnsureCreated();
+
+            //to create new object of GuestRepositry ...
+            IGuestRepositry GuestObject = new GuestRepositry(context);
+            //to create new object of GestServices ...
+            IGestServices GuestService = new GestServices(GuestObject);
         }
     }
 }
