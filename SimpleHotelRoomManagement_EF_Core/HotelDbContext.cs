@@ -14,7 +14,7 @@ namespace SimpleHotelRoomManagement_EF_Core
         //to override the OnConfiguring method to set the connection string ...
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=LAPTOP-IUF9HHIH;Initial Catalog=HotelDB;Integrated Security=True;TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer("Data Source=DESKTOP-OGTF9QH;Initial Catalog=HotelDB;Integrated Security=True;TrustServerCertificate=True");
         }
 
         // DbSet properties for each model class
