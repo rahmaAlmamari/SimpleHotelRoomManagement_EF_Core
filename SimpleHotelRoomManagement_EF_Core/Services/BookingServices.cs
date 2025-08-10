@@ -32,6 +32,8 @@ namespace SimpleHotelRoomManagement_EF_Core.Services
             booking.CheckInDate = checkIn; // Set the check-in date
             booking.CheckOutDate = checkOut; // Set the check-out date
             booking.room = room; // Set the room navigation property
+            //to change the room availability status to false ...
+            room.IsAvailable = false; // Mark the room as not available
             booking.guest = guest; // Set the guest navigation property
             // Calculate the number of nights ...
             int numberOfNights = (checkOut - checkIn).Days;
