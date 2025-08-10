@@ -1,5 +1,6 @@
 ﻿using SimpleHotelRoomManagement_EF_Core.Repositries;
 using SimpleHotelRoomManagement_EF_Core.Services;
+using SimpleHotelRoomManagement_EF_Core.Helper;
 
 namespace SimpleHotelRoomManagement_EF_Core
 {
@@ -31,6 +32,16 @@ namespace SimpleHotelRoomManagement_EF_Core
             IRatingRepositry ratingRepositry = new RatingRepositry(context);
             //to create new object of RatingServices ...
             IRatingServices ratingServices = new RatingServices(ratingRepositry);
+
+            //to create the program menu ...
+            bool exit = true;
+            do
+            {
+                char choice;
+                Console.Clear();
+
+
+            } while (exit);
         }
     }
 }
