@@ -172,7 +172,11 @@ namespace SimpleHotelRoomManagement_EF_Core
                         });
                         break;
                     case '8':
-                        
+                        //to show all ratings ...
+                        ratingServices.GetAllRatings().ForEach(r =>
+                        {
+                            Console.WriteLine($"Rating ID: {r.RatingId}, Guest ID: {r.GuestId}, Room Number: {r.RoomNumber}, Score: {r.Score}, Comment: {r.Comment}, Date: {r.RatingDate}");
+                        });
                         break;
                     case '0':
                         exit = false;
