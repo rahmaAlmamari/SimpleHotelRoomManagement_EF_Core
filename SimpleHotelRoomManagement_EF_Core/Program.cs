@@ -149,6 +149,8 @@ namespace SimpleHotelRoomManagement_EF_Core
                         rating.guest = guestForRating; // Set the guest navigation property
                         //to add the rating to the database ...
                         ratingServices.AddRating(rating);
+                        Console.WriteLine("Rating added successfully.");
+                        Additional.HoldScreen();
                         break;
                     case '5':
                         //to show all rooms ...
@@ -156,6 +158,7 @@ namespace SimpleHotelRoomManagement_EF_Core
                         {
                             Console.WriteLine($"Room Number: {r.RoomNumber}, Daily Price: {r.RoomDailyPrice}, Available: {r.IsAvailable}");
                         });
+                        Additional.HoldScreen();
                         break;
                     case '6':
                         //to show all guests ...
@@ -163,6 +166,7 @@ namespace SimpleHotelRoomManagement_EF_Core
                         {
                             Console.WriteLine($"Guest ID: {g.GuestId}, Name: {g.GuestName}, Email: {g.GuestEmail}, Phone: {g.GuestPhoneNumber}");
                         });
+                        Additional.HoldScreen();
                         break;
                     case '7':
                         //to show all bookings ...
@@ -170,6 +174,7 @@ namespace SimpleHotelRoomManagement_EF_Core
                         {
                             Console.WriteLine($"Booking ID: {b.BookingId}, Guest ID: {b.GuestId}, Room Number: {b.RoomNumber}, Check-In: {b.CheckInDate}, Check-Out: {b.CheckOutDate}, Total Price: {b.TotalPrice}");
                         });
+                        Additional.HoldScreen();
                         break;
                     case '8':
                         //to show all ratings ...
@@ -177,6 +182,7 @@ namespace SimpleHotelRoomManagement_EF_Core
                         {
                             Console.WriteLine($"Rating ID: {r.RatingId}, Guest ID: {r.GuestId}, Room Number: {r.RoomNumber}, Score: {r.Score}, Comment: {r.Comment}, Date: {r.RatingDate}");
                         });
+                        Additional.HoldScreen();
                         break;
                     case '0':
                         exit = false;
