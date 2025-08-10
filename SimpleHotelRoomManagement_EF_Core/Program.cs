@@ -116,7 +116,39 @@ namespace SimpleHotelRoomManagement_EF_Core
                         }
                         break;
                     case '4':
-                        
+                        //to list all guests ...
+                        GuestService.GetAllGuests().ForEach(g =>
+                        {
+                            Console.WriteLine($"Guest ID: {g.GuestId}, Name: {g.GuestName}");
+                        });
+                        //to get the guest ID for rating ...
+                        int guestIdForRating = Validation.IntValidation("guest ID for rating");
+                        //to list all guest room bookings ...
+                        BookingService.GetBookingsByGuestId(guestIdForRating).ForEach(b =>
+                        {
+                            Console.WriteLine($"Booking ID: {b.BookingId}, Room Number: {b.RoomNumber}");
+                        });
+                        //to get the room ID for rating ...
+                        int roomIdForRating = Validation.IntValidation("room ID for rating");
+                        //to get the rating value from the user ...
+                        int ratingScore = Validation.IntValidation("rating score (1-5)");
+                        //to get the rating comment from the user ...
+                        string ratingComment = Validation.StringValidation("rating comment");
+                        //to create new rating object ...
+                        Rating rating = new Rating();
+                        rating.GuestId = guestIdForRating;
+                        rating.RoomNumber = roomIdForRating;
+                        rating.Score = ratingScore;
+                        rating.Comment = ratingComment;
+                        rating.RatingDate = DateTime.Now;
+                        //to get the room object by room number ...
+                        Room roomForRating = RoomService.GetRoomByNumber(roomIdForRating);
+                        //to get the guest object by guest ID ...
+                        Guest guestForRating = GuestService.GetGuestById(guestIdForRating);
+                        rating.room = roomForRating; // Set the room navigation property
+                        rating.guest = guestForRating; // Set the guest navigation property
+                        //to add the rating to the database ...
+                        ratingServices.AddRating(rating);
                         break;
                     case '5':
                         
