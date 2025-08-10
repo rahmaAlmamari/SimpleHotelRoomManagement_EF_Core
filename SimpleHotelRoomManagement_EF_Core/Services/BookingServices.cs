@@ -23,14 +23,16 @@ namespace SimpleHotelRoomManagement_EF_Core.Services
             return _BookingRepositry.GetAllBookings();
         }
         //to AddBooking method to add a new booking to the database ...
-        public void AddBooking(int guestId, int roomId, DateTime checkIn, DateTime checkOut, double price)
+        public void AddBooking(Guest guest, Room room, DateTime checkIn, DateTime checkOut, double price)
         {
             // Create a new booking instance
             Booking booking = new Booking();
-            booking.GuestId = guestId; // Set the guest ID
-            booking.RoomNumber = roomId; // Set the room number
+            booking.GuestId = guest.GuestId; // Set the guest ID
+            booking.RoomNumber = room.RoomNumber; // Set the room number
             booking.CheckInDate = checkIn; // Set the check-in date
             booking.CheckOutDate = checkOut; // Set the check-out date
+            booking.room = room; // Set the room navigation property
+            booking.guest = guest; // Set the guest navigation property
             // Calculate the number of nights ...
             int numberOfNights = (checkOut - checkIn).Days;
             //to get the room deaily price ...
