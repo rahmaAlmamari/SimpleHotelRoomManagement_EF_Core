@@ -65,7 +65,19 @@ namespace SimpleHotelRoomManagement_EF_Core
                         Additional.HoldScreen();
                         break;
                     case '2':
-                        
+                        //to get the guest details from the user ...
+                        string name = Validation.StringValidation("guest name");
+                        string email = Validation.EmailValidation("guest email");
+                        int phoneNumber = Validation.UserPhoneNumberValidation();
+                        //to create new guest object ...
+                        Guest guest = new Guest();
+                        guest.GuestName = name;
+                        guest.GuestEmail = email;
+                        guest.GuestPhoneNumber = phoneNumber.ToString();
+                        //to add the guest to the database ...
+                        GuestService.AddGuest(guest);
+                        Console.WriteLine("Guest added successfully.");
+                        Additional.HoldScreen();
                         break;
                     case '3':
                         
