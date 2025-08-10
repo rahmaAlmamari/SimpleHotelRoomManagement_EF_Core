@@ -151,7 +151,11 @@ namespace SimpleHotelRoomManagement_EF_Core
                         ratingServices.AddRating(rating);
                         break;
                     case '5':
-                        
+                        //to show all rooms ...
+                        RoomService.GetAllRooms().ForEach(r =>
+                        {
+                            Console.WriteLine($"Room Number: {r.RoomNumber}, Daily Price: {r.RoomDailyPrice}, Available: {r.IsAvailable}");
+                        });
                         break;
                     case '6':
                         
