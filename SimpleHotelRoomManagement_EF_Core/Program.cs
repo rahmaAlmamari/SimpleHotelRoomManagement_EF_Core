@@ -40,7 +40,18 @@ namespace SimpleHotelRoomManagement_EF_Core
             {
                 char choice;
                 Console.Clear();
-                
+                Console.WriteLine("1. Add room");
+                Console.WriteLine("2. Add guest");
+                Console.WriteLine("3. Add booking");
+                Console.WriteLine("4. Add rating");
+                Console.WriteLine("5. Show all rooms");
+                Console.WriteLine("6. Show all guests");
+                Console.WriteLine("7. Show all bookings");
+                Console.WriteLine("8. Show all ratings");
+                Console.WriteLine("0. Exit");
+                choice = Validation.CharValidation("your choice");
+
+
 
             } while (exit);
         }
