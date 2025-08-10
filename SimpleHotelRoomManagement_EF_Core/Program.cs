@@ -165,7 +165,11 @@ namespace SimpleHotelRoomManagement_EF_Core
                         });
                         break;
                     case '7':
-                        
+                        //to show all bookings ...
+                        BookingService.GetAllBookings().ForEach(b =>
+                        {
+                            Console.WriteLine($"Booking ID: {b.BookingId}, Guest ID: {b.GuestId}, Room Number: {b.RoomNumber}, Check-In: {b.CheckInDate}, Check-Out: {b.CheckOutDate}, Total Price: {b.TotalPrice}");
+                        });
                         break;
                     case '8':
                         
