@@ -80,7 +80,40 @@ namespace SimpleHotelRoomManagement_EF_Core
                         Additional.HoldScreen();
                         break;
                     case '3':
-                        
+                        //to list all available rooms ...
+                        RoomService.GetAllRooms().ForEach(r =>
+                        {
+                            if (r.IsAvailable)
+                            {
+                                Console.WriteLine($"Room Number: {r.RoomNumber}, Daily Price: {r.RoomDailyPrice}");
+                            }
+                        });
+                        //to list all guests ...
+                        GuestService.GetAllGuests().ForEach(g =>
+                        {
+                            Console.WriteLine($"Guest ID: {g.GuestId}, Name: {g.GuestName}");
+                        });
+                        //to get the booking details from the user ...
+                        int roomNumber = Validation.IntValidation("room number");
+                        int guestId = Validation.IntValidation("guest ID");
+                        DateTime checkInDate = Validation.DateTimeValidation("check-in date");
+                        DateTime checkOutDate = Validation.DateTimeValidation("check-out date");
+                        //to get the room object by room number ...
+                        Room selectedRoom = RoomService.GetRoomByNumber(roomNumber);
+                        //to get the guest object by guest ID ...
+                        Guest selectedGuest = GuestService.GetGuestById(guestId);
+                        //to add the booking to the database ...
+                        if (selectedRoom != null && selectedGuest != null)
+                        {
+                            BookingService.AddBooking(selectedGuest, selectedRoom, checkInDate, checkOutDate, selectedRoom.RoomDailyPrice);
+                            Console.WriteLine("Booking added successfully.");
+                            Additional.HoldScreen();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid room number or guest ID.");
+                            Additional.HoldScreen();
+                        }
                         break;
                     case '4':
                         
