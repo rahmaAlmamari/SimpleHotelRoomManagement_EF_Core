@@ -4,7 +4,7 @@ namespace SimpleHotelRoomManagement_EF_Core.Services
 {
     public interface IBookingServices
     {
-        void AddBooking(Booking booking);
+        void AddBooking(int guestId, int roomId, DateTime checkIn, DateTime checkOut, double price);
         void DeleteBooking(int bookingId);
         List<Booking> GetAllBookings();
         Booking GetBookingById(int id);
