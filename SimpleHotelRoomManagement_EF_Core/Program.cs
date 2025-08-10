@@ -21,6 +21,11 @@ namespace SimpleHotelRoomManagement_EF_Core
             IRoomRepositry RoomObject = new RoomRepositry(context);
             //to create new object of RoomServices ...
             IRoomServices RoomService = new RoomServices(RoomObject);
+
+            //to create new object of BookingRepositry ...
+            IBookingRepositry BookingObject = new BookingRepositry(context);
+            //to create new object of BookingServices ...
+            IBookingServices BookingService = new BookingServices(BookingObject);
         }
     }
 }
