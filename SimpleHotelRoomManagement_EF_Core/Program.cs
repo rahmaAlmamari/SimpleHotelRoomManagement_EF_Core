@@ -1,6 +1,7 @@
 ﻿using SimpleHotelRoomManagement_EF_Core.Repositries;
 using SimpleHotelRoomManagement_EF_Core.Services;
 using SimpleHotelRoomManagement_EF_Core.Helper;
+using SimpleHotelRoomManagement_EF_Core.Models;
 
 namespace SimpleHotelRoomManagement_EF_Core
 {
@@ -50,7 +51,50 @@ namespace SimpleHotelRoomManagement_EF_Core
                 Console.WriteLine("8. Show all ratings");
                 Console.WriteLine("0. Exit");
                 choice = Validation.CharValidation("your choice");
-
+                switch (choice) 
+                {
+                    case '1':
+                        //to get the room details from the user ...
+                        double price = Validation.DoubleValidation("room daily price");
+                        //to create new room object ...
+                        Room room = new Room();
+                        room.RoomDailyPrice = price;
+                        //to add the room to the database ...
+                        RoomService.AddRoom(room);
+                        Console.WriteLine("Room added successfully.");
+                        Additional.HoldScreen();
+                        break;
+                    case '2':
+                        
+                        break;
+                    case '3':
+                        
+                        break;
+                    case '4':
+                        
+                        break;
+                    case '5':
+                        
+                        break;
+                    case '6':
+                        
+                        break;
+                    case '7':
+                        
+                        break;
+                    case '8':
+                        
+                        break;
+                    case '0':
+                        exit = false;
+                        Console.WriteLine("Thank you for using our system. Goodbye!");
+                        Additional.HoldScreen();
+                        break;
+                    default:
+                        Console.WriteLine("Invalid choice, please try again.");
+                        Additional.HoldScreen();
+                        break;
+                }
 
 
             } while (exit);
