@@ -35,11 +35,12 @@ namespace SimpleHotelRoomManagement_EF_Core
 
             //to create the program menu ...
             bool exit = true;
+            Additional.WelcomeMessage("CodeLine Hotel");
             do
             {
                 char choice;
                 Console.Clear();
-
+                
 
             } while (exit);
         }
